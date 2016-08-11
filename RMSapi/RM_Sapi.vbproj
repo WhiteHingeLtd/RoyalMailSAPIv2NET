@@ -11,7 +11,7 @@
     <RootNamespace>RMaPI_v2</RootNamespace>
     <AssemblyName>RMaPI_v2</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>Windows</MyType>
+    <MyType>WebControl</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -52,6 +52,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
@@ -77,6 +78,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utils\PassDigestion.vb" />
     <None Include="Data\BaseCode.vb" />
     <Compile Include="Data\BFPOFormats.vb" />
     <Compile Include="Data\Countries.vb" />
@@ -101,7 +103,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Service References\Sapi\Reference.vb">
+    <Compile Include="Service References\Sapi_209\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -127,90 +129,89 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="Resources\ShippingAPI_V2_0_9.wsdl" />
-    <None Include="Service References\Sapi\CommonClassesV2_3.xsd">
+    <None Include="Service References\Sapi_209\CommonClassesV2_3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sapi\CommonIntegrationSchemaV1_11_1.xsd">
+    <None Include="Service References\Sapi_209\CommonIntegrationSchemaV1_11_1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sapi\DatatypesV2_3.xsd">
+    <None Include="Service References\Sapi_209\DatatypesV2_3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sapi\oasis-200401-wss-wssecurity-secext-1.xsd">
+    <None Include="Service References\Sapi_209\oasis-200401-wss-wssecurity-secext-1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sapi\oasis-200401-wss-wssecurity-utility-1.xsd">
+    <None Include="Service References\Sapi_209\oasis-200401-wss-wssecurity-utility-1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sapi\ReferenceDataV2_3.xsd">
+    <None Include="Service References\Sapi_209\ReferenceDataV2_3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.cancelShipmentResponse.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.cancelShipmentResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.cancelShipmentResponse1.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.cancelShipmentResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.createManifestResponse.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.createManifestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.createManifestResponse1.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.createManifestResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.createShipmentResponse.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.createShipmentResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.createShipmentResponse1.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.createShipmentResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.printDocumentResponse.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.printDocumentResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.printDocumentResponse1.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.printDocumentResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.printLabelResponse.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.printLabelResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.printLabelResponse1.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.printLabelResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.printManifestResponse.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.printManifestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.printManifestResponse1.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.printManifestResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.request1DRangesResponse.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.request1DRangesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.request1DRangesResponse1.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.request1DRangesResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.request2DItemIDRangeResponse.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.request2DItemIDRangeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.request2DItemIDRangeResponse1.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.request2DItemIDRangeResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.updateShipmentResponse.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.updateShipmentResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMaPI_v2.Sapi.updateShipmentResponse1.datasource">
+    <None Include="Service References\Sapi_209\RMaPI_v2.Sapi_209.updateShipmentResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sapi\RMGSOAPExtensionsV1_2.xsd">
+    <None Include="Service References\Sapi_209\RMGSOAPExtensionsV1_2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sapi\shippingAPI.wsdl" />
-    <None Include="Service References\Sapi\ShippingAPI_V2_0_9.xsd">
+    <None Include="Service References\Sapi_209\shippingAPI.wsdl" />
+    <None Include="Service References\Sapi_209\ShippingAPI_V2_0_9.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sapi\xml.xsd">
+    <None Include="Service References\Sapi_209\xml.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sapi\xmldsig-core-schema.xsd">
+    <None Include="Service References\Sapi_209\xmldsig-core-schema.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="WSDL Data\oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -246,19 +247,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\Sapi\" />
+    <WCFMetadataStorage Include="Service References\Sapi_209\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Sapi\configuration91.svcinfo" />
+    <None Include="Service References\Sapi_209\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Sapi\configuration.svcinfo" />
+    <None Include="Service References\Sapi_209\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Sapi\Reference.svcmap">
+    <None Include="Service References\Sapi_209\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>

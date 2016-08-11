@@ -1,6 +1,7 @@
 ﻿Namespace SapiData
 
     Public Enum ServiceTypes
+        None = 0
         _Royal_Mail_24___1st_Class = 1
         _Royal_Mail_48___2nd_Class = 2
         _Special_Delivery_Guaranteed = 3
@@ -14,7 +15,11 @@
         Inherits Dictionary(Of String, String)
 
         Public Function GetItem(item) As String
-            Return Me(item.ToString)
+            If Not item = 0 Then
+                Return Me(item.ToString)
+            Else
+                Return ""
+            End If
         End Function
 
         Public Sub New()

@@ -12,7 +12,7 @@ Option Strict On
 Option Explicit On
 
 
-Namespace Sapi
+Namespace Sapi_209
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2"),  _
@@ -3559,107 +3559,107 @@ Namespace Sapi
     End Class
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ServiceModel.ServiceContractAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", ConfigurationName:="Sapi.shippingAPIPortType")>  _
+     System.ServiceModel.ServiceContractAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", ConfigurationName:="Sapi_209.shippingAPIPortType")>  _
     Public Interface shippingAPIPortType
         
         'CODEGEN: Generating message contract since the operation createShipment is neither RPC nor document wrapped.
         <System.ServiceModel.OperationContractAttribute(Action:="createShipment", ReplyAction:="*"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(Sapi.exceptionDetails), Action:="createShipment", Name:="exceptionDetails"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(Sapi_209.exceptionDetails), Action:="createShipment", Name:="exceptionDetails"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(contactMechanism)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(baseRequest))>  _
-        Function createShipment(ByVal request As Sapi.createShipmentRequest1) As Sapi.createShipmentResponse1
+        Function createShipment(ByVal request As Sapi_209.createShipmentRequest1) As Sapi_209.createShipmentResponse1
         
         <System.ServiceModel.OperationContractAttribute(Action:="createShipment", ReplyAction:="*")>  _
-        Function createShipmentAsync(ByVal request As Sapi.createShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi.createShipmentResponse1)
+        Function createShipmentAsync(ByVal request As Sapi_209.createShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi_209.createShipmentResponse1)
         
         'CODEGEN: Generating message contract since the operation printLabel is neither RPC nor document wrapped.
         <System.ServiceModel.OperationContractAttribute(Action:="printLabel", ReplyAction:="*"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(Sapi.exceptionDetails), Action:="printLabel", Name:="exceptionDetails"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(Sapi_209.exceptionDetails), Action:="printLabel", Name:="exceptionDetails"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(contactMechanism)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(baseRequest))>  _
-        Function printLabel(ByVal request As Sapi.printLabelRequest1) As Sapi.printLabelResponse1
+        Function printLabel(ByVal request As Sapi_209.printLabelRequest1) As Sapi_209.printLabelResponse1
         
         <System.ServiceModel.OperationContractAttribute(Action:="printLabel", ReplyAction:="*")>  _
-        Function printLabelAsync(ByVal request As Sapi.printLabelRequest1) As System.Threading.Tasks.Task(Of Sapi.printLabelResponse1)
+        Function printLabelAsync(ByVal request As Sapi_209.printLabelRequest1) As System.Threading.Tasks.Task(Of Sapi_209.printLabelResponse1)
         
         'CODEGEN: Generating message contract since the operation createManifest is neither RPC nor document wrapped.
         <System.ServiceModel.OperationContractAttribute(Action:="createManifest", ReplyAction:="*"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(Sapi.exceptionDetails), Action:="createManifest", Name:="exceptionDetails"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(Sapi_209.exceptionDetails), Action:="createManifest", Name:="exceptionDetails"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(contactMechanism)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(baseRequest))>  _
-        Function createManifest(ByVal request As Sapi.createManifestRequest1) As Sapi.createManifestResponse1
+        Function createManifest(ByVal request As Sapi_209.createManifestRequest1) As Sapi_209.createManifestResponse1
         
         <System.ServiceModel.OperationContractAttribute(Action:="createManifest", ReplyAction:="*")>  _
-        Function createManifestAsync(ByVal request As Sapi.createManifestRequest1) As System.Threading.Tasks.Task(Of Sapi.createManifestResponse1)
+        Function createManifestAsync(ByVal request As Sapi_209.createManifestRequest1) As System.Threading.Tasks.Task(Of Sapi_209.createManifestResponse1)
         
         'CODEGEN: Generating message contract since the operation printManifest is neither RPC nor document wrapped.
         <System.ServiceModel.OperationContractAttribute(Action:="printManifest", ReplyAction:="*"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(Sapi.exceptionDetails), Action:="printManifest", Name:="exceptionDetails"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(Sapi_209.exceptionDetails), Action:="printManifest", Name:="exceptionDetails"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(contactMechanism)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(baseRequest))>  _
-        Function printManifest(ByVal request As Sapi.printManifestRequest1) As Sapi.printManifestResponse1
+        Function printManifest(ByVal request As Sapi_209.printManifestRequest1) As Sapi_209.printManifestResponse1
         
         <System.ServiceModel.OperationContractAttribute(Action:="printManifest", ReplyAction:="*")>  _
-        Function printManifestAsync(ByVal request As Sapi.printManifestRequest1) As System.Threading.Tasks.Task(Of Sapi.printManifestResponse1)
+        Function printManifestAsync(ByVal request As Sapi_209.printManifestRequest1) As System.Threading.Tasks.Task(Of Sapi_209.printManifestResponse1)
         
         'CODEGEN: Generating message contract since the operation updateShipment is neither RPC nor document wrapped.
         <System.ServiceModel.OperationContractAttribute(Action:="updateShipment", ReplyAction:="*"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(Sapi.exceptionDetails), Action:="updateShipment", Name:="exceptionDetails"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(Sapi_209.exceptionDetails), Action:="updateShipment", Name:="exceptionDetails"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(contactMechanism)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(baseRequest))>  _
-        Function updateShipment(ByVal request As Sapi.updateShipmentRequest1) As Sapi.updateShipmentResponse1
+        Function updateShipment(ByVal request As Sapi_209.updateShipmentRequest1) As Sapi_209.updateShipmentResponse1
         
         <System.ServiceModel.OperationContractAttribute(Action:="updateShipment", ReplyAction:="*")>  _
-        Function updateShipmentAsync(ByVal request As Sapi.updateShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi.updateShipmentResponse1)
+        Function updateShipmentAsync(ByVal request As Sapi_209.updateShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi_209.updateShipmentResponse1)
         
         'CODEGEN: Generating message contract since the operation cancelShipment is neither RPC nor document wrapped.
         <System.ServiceModel.OperationContractAttribute(Action:="cancelShipment", ReplyAction:="*"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(Sapi.exceptionDetails), Action:="cancelShipment", Name:="exceptionDetails"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(Sapi_209.exceptionDetails), Action:="cancelShipment", Name:="exceptionDetails"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(contactMechanism)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(baseRequest))>  _
-        Function cancelShipment(ByVal request As Sapi.cancelShipmentRequest1) As Sapi.cancelShipmentResponse1
+        Function cancelShipment(ByVal request As Sapi_209.cancelShipmentRequest1) As Sapi_209.cancelShipmentResponse1
         
         <System.ServiceModel.OperationContractAttribute(Action:="cancelShipment", ReplyAction:="*")>  _
-        Function cancelShipmentAsync(ByVal request As Sapi.cancelShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi.cancelShipmentResponse1)
+        Function cancelShipmentAsync(ByVal request As Sapi_209.cancelShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi_209.cancelShipmentResponse1)
         
         'CODEGEN: Generating message contract since the operation printDocument is neither RPC nor document wrapped.
         <System.ServiceModel.OperationContractAttribute(Action:="printDocument", ReplyAction:="*"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(Sapi.exceptionDetails), Action:="printDocument", Name:="exceptionDetails"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(Sapi_209.exceptionDetails), Action:="printDocument", Name:="exceptionDetails"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(contactMechanism)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(baseRequest))>  _
-        Function printDocument(ByVal request As Sapi.printDocumentRequest1) As Sapi.printDocumentResponse1
+        Function printDocument(ByVal request As Sapi_209.printDocumentRequest1) As Sapi_209.printDocumentResponse1
         
         <System.ServiceModel.OperationContractAttribute(Action:="printDocument", ReplyAction:="*")>  _
-        Function printDocumentAsync(ByVal request As Sapi.printDocumentRequest1) As System.Threading.Tasks.Task(Of Sapi.printDocumentResponse1)
+        Function printDocumentAsync(ByVal request As Sapi_209.printDocumentRequest1) As System.Threading.Tasks.Task(Of Sapi_209.printDocumentResponse1)
         
         'CODEGEN: Generating message contract since the operation request1DRanges is neither RPC nor document wrapped.
         <System.ServiceModel.OperationContractAttribute(Action:="request1DRanges", ReplyAction:="*"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(Sapi.exceptionDetails), Action:="request1DRanges", Name:="exceptionDetails"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(Sapi_209.exceptionDetails), Action:="request1DRanges", Name:="exceptionDetails"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(contactMechanism)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(baseRequest))>  _
-        Function request1DRanges(ByVal request As Sapi.request1DRangesRequest1) As Sapi.request1DRangesResponse1
+        Function request1DRanges(ByVal request As Sapi_209.request1DRangesRequest1) As Sapi_209.request1DRangesResponse1
         
         <System.ServiceModel.OperationContractAttribute(Action:="request1DRanges", ReplyAction:="*")>  _
-        Function request1DRangesAsync(ByVal request As Sapi.request1DRangesRequest1) As System.Threading.Tasks.Task(Of Sapi.request1DRangesResponse1)
+        Function request1DRangesAsync(ByVal request As Sapi_209.request1DRangesRequest1) As System.Threading.Tasks.Task(Of Sapi_209.request1DRangesResponse1)
         
         'CODEGEN: Generating message contract since the operation request2DItemIDRange is neither RPC nor document wrapped.
         <System.ServiceModel.OperationContractAttribute(Action:="request2DItemIDRange", ReplyAction:="*"),  _
-         System.ServiceModel.FaultContractAttribute(GetType(Sapi.exceptionDetails), Action:="request2DItemIDRange", Name:="exceptionDetails"),  _
+         System.ServiceModel.FaultContractAttribute(GetType(Sapi_209.exceptionDetails), Action:="request2DItemIDRange", Name:="exceptionDetails"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(contactMechanism)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(baseRequest))>  _
-        Function request2DItemIDRange(ByVal request As Sapi.request2DItemIDRangeRequest1) As Sapi.request2DItemIDRangeResponse1
+        Function request2DItemIDRange(ByVal request As Sapi_209.request2DItemIDRangeRequest1) As Sapi_209.request2DItemIDRangeResponse1
         
         <System.ServiceModel.OperationContractAttribute(Action:="request2DItemIDRange", ReplyAction:="*")>  _
-        Function request2DItemIDRangeAsync(ByVal request As Sapi.request2DItemIDRangeRequest1) As System.Threading.Tasks.Task(Of Sapi.request2DItemIDRangeResponse1)
+        Function request2DItemIDRangeAsync(ByVal request As Sapi_209.request2DItemIDRangeRequest1) As System.Threading.Tasks.Task(Of Sapi_209.request2DItemIDRangeResponse1)
     End Interface
     
     '''<remarks/>
@@ -3719,16 +3719,16 @@ Namespace Sapi
         
         <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"& _ 
             "")>  _
-        Public Security As Sapi.SecurityHeaderType
+        Public Security As Sapi_209.SecurityHeaderType
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public createShipmentRequest As Sapi.createShipmentRequest
+        Public createShipmentRequest As Sapi_209.createShipmentRequest
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Security As Sapi.SecurityHeaderType, ByVal createShipmentRequest As Sapi.createShipmentRequest)
+        Public Sub New(ByVal Security As Sapi_209.SecurityHeaderType, ByVal createShipmentRequest As Sapi_209.createShipmentRequest)
             MyBase.New
             Me.Security = Security
             Me.createShipmentRequest = createShipmentRequest
@@ -3742,13 +3742,13 @@ Namespace Sapi
     Partial Public Class createShipmentResponse1
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public createShipmentResponse As Sapi.createShipmentResponse
+        Public createShipmentResponse As Sapi_209.createShipmentResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal createShipmentResponse As Sapi.createShipmentResponse)
+        Public Sub New(ByVal createShipmentResponse As Sapi_209.createShipmentResponse)
             MyBase.New
             Me.createShipmentResponse = createShipmentResponse
         End Sub
@@ -4270,16 +4270,16 @@ Namespace Sapi
         
         <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"& _ 
             "")>  _
-        Public Security As Sapi.SecurityHeaderType
+        Public Security As Sapi_209.SecurityHeaderType
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public printLabelRequest As Sapi.printLabelRequest
+        Public printLabelRequest As Sapi_209.printLabelRequest
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Security As Sapi.SecurityHeaderType, ByVal printLabelRequest As Sapi.printLabelRequest)
+        Public Sub New(ByVal Security As Sapi_209.SecurityHeaderType, ByVal printLabelRequest As Sapi_209.printLabelRequest)
             MyBase.New
             Me.Security = Security
             Me.printLabelRequest = printLabelRequest
@@ -4293,13 +4293,13 @@ Namespace Sapi
     Partial Public Class printLabelResponse1
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public printLabelResponse As Sapi.printLabelResponse
+        Public printLabelResponse As Sapi_209.printLabelResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal printLabelResponse As Sapi.printLabelResponse)
+        Public Sub New(ByVal printLabelResponse As Sapi_209.printLabelResponse)
             MyBase.New
             Me.printLabelResponse = printLabelResponse
         End Sub
@@ -4487,16 +4487,16 @@ Namespace Sapi
         
         <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"& _ 
             "")>  _
-        Public Security As Sapi.SecurityHeaderType
+        Public Security As Sapi_209.SecurityHeaderType
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public createManifestRequest As Sapi.createManifestRequest
+        Public createManifestRequest As Sapi_209.createManifestRequest
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Security As Sapi.SecurityHeaderType, ByVal createManifestRequest As Sapi.createManifestRequest)
+        Public Sub New(ByVal Security As Sapi_209.SecurityHeaderType, ByVal createManifestRequest As Sapi_209.createManifestRequest)
             MyBase.New
             Me.Security = Security
             Me.createManifestRequest = createManifestRequest
@@ -4510,13 +4510,13 @@ Namespace Sapi
     Partial Public Class createManifestResponse1
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public createManifestResponse As Sapi.createManifestResponse
+        Public createManifestResponse As Sapi_209.createManifestResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal createManifestResponse As Sapi.createManifestResponse)
+        Public Sub New(ByVal createManifestResponse As Sapi_209.createManifestResponse)
             MyBase.New
             Me.createManifestResponse = createManifestResponse
         End Sub
@@ -4592,16 +4592,16 @@ Namespace Sapi
         
         <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"& _ 
             "")>  _
-        Public Security As Sapi.SecurityHeaderType
+        Public Security As Sapi_209.SecurityHeaderType
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public printManifestRequest As Sapi.printManifestRequest
+        Public printManifestRequest As Sapi_209.printManifestRequest
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Security As Sapi.SecurityHeaderType, ByVal printManifestRequest As Sapi.printManifestRequest)
+        Public Sub New(ByVal Security As Sapi_209.SecurityHeaderType, ByVal printManifestRequest As Sapi_209.printManifestRequest)
             MyBase.New
             Me.Security = Security
             Me.printManifestRequest = printManifestRequest
@@ -4615,13 +4615,13 @@ Namespace Sapi
     Partial Public Class printManifestResponse1
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public printManifestResponse As Sapi.printManifestResponse
+        Public printManifestResponse As Sapi_209.printManifestResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal printManifestResponse As Sapi.printManifestResponse)
+        Public Sub New(ByVal printManifestResponse As Sapi_209.printManifestResponse)
             MyBase.New
             Me.printManifestResponse = printManifestResponse
         End Sub
@@ -4725,16 +4725,16 @@ Namespace Sapi
         
         <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"& _ 
             "")>  _
-        Public Security As Sapi.SecurityHeaderType
+        Public Security As Sapi_209.SecurityHeaderType
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public updateShipmentRequest As Sapi.updateShipmentRequest
+        Public updateShipmentRequest As Sapi_209.updateShipmentRequest
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Security As Sapi.SecurityHeaderType, ByVal updateShipmentRequest As Sapi.updateShipmentRequest)
+        Public Sub New(ByVal Security As Sapi_209.SecurityHeaderType, ByVal updateShipmentRequest As Sapi_209.updateShipmentRequest)
             MyBase.New
             Me.Security = Security
             Me.updateShipmentRequest = updateShipmentRequest
@@ -4748,13 +4748,13 @@ Namespace Sapi
     Partial Public Class updateShipmentResponse1
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public updateShipmentResponse As Sapi.updateShipmentResponse
+        Public updateShipmentResponse As Sapi_209.updateShipmentResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal updateShipmentResponse As Sapi.updateShipmentResponse)
+        Public Sub New(ByVal updateShipmentResponse As Sapi_209.updateShipmentResponse)
             MyBase.New
             Me.updateShipmentResponse = updateShipmentResponse
         End Sub
@@ -4879,16 +4879,16 @@ Namespace Sapi
         
         <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"& _ 
             "")>  _
-        Public Security As Sapi.SecurityHeaderType
+        Public Security As Sapi_209.SecurityHeaderType
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public cancelShipmentRequest As Sapi.cancelShipmentRequest
+        Public cancelShipmentRequest As Sapi_209.cancelShipmentRequest
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Security As Sapi.SecurityHeaderType, ByVal cancelShipmentRequest As Sapi.cancelShipmentRequest)
+        Public Sub New(ByVal Security As Sapi_209.SecurityHeaderType, ByVal cancelShipmentRequest As Sapi_209.cancelShipmentRequest)
             MyBase.New
             Me.Security = Security
             Me.cancelShipmentRequest = cancelShipmentRequest
@@ -4902,13 +4902,13 @@ Namespace Sapi
     Partial Public Class cancelShipmentResponse1
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public cancelShipmentResponse As Sapi.cancelShipmentResponse
+        Public cancelShipmentResponse As Sapi_209.cancelShipmentResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal cancelShipmentResponse As Sapi.cancelShipmentResponse)
+        Public Sub New(ByVal cancelShipmentResponse As Sapi_209.cancelShipmentResponse)
             MyBase.New
             Me.cancelShipmentResponse = cancelShipmentResponse
         End Sub
@@ -4984,16 +4984,16 @@ Namespace Sapi
         
         <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"& _ 
             "")>  _
-        Public Security As Sapi.SecurityHeaderType
+        Public Security As Sapi_209.SecurityHeaderType
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public printDocumentRequest As Sapi.printDocumentRequest
+        Public printDocumentRequest As Sapi_209.printDocumentRequest
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Security As Sapi.SecurityHeaderType, ByVal printDocumentRequest As Sapi.printDocumentRequest)
+        Public Sub New(ByVal Security As Sapi_209.SecurityHeaderType, ByVal printDocumentRequest As Sapi_209.printDocumentRequest)
             MyBase.New
             Me.Security = Security
             Me.printDocumentRequest = printDocumentRequest
@@ -5007,13 +5007,13 @@ Namespace Sapi
     Partial Public Class printDocumentResponse1
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public printDocumentResponse As Sapi.printDocumentResponse
+        Public printDocumentResponse As Sapi_209.printDocumentResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal printDocumentResponse As Sapi.printDocumentResponse)
+        Public Sub New(ByVal printDocumentResponse As Sapi_209.printDocumentResponse)
             MyBase.New
             Me.printDocumentResponse = printDocumentResponse
         End Sub
@@ -5219,16 +5219,16 @@ Namespace Sapi
         
         <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"& _ 
             "")>  _
-        Public Security As Sapi.SecurityHeaderType
+        Public Security As Sapi_209.SecurityHeaderType
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public request1DRangesRequest As Sapi.request1DRangesRequest
+        Public request1DRangesRequest As Sapi_209.request1DRangesRequest
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Security As Sapi.SecurityHeaderType, ByVal request1DRangesRequest As Sapi.request1DRangesRequest)
+        Public Sub New(ByVal Security As Sapi_209.SecurityHeaderType, ByVal request1DRangesRequest As Sapi_209.request1DRangesRequest)
             MyBase.New
             Me.Security = Security
             Me.request1DRangesRequest = request1DRangesRequest
@@ -5242,13 +5242,13 @@ Namespace Sapi
     Partial Public Class request1DRangesResponse1
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public request1DRangesResponse As Sapi.request1DRangesResponse
+        Public request1DRangesResponse As Sapi_209.request1DRangesResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal request1DRangesResponse As Sapi.request1DRangesResponse)
+        Public Sub New(ByVal request1DRangesResponse As Sapi_209.request1DRangesResponse)
             MyBase.New
             Me.request1DRangesResponse = request1DRangesResponse
         End Sub
@@ -5372,16 +5372,16 @@ Namespace Sapi
         
         <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"& _ 
             "")>  _
-        Public Security As Sapi.SecurityHeaderType
+        Public Security As Sapi_209.SecurityHeaderType
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public request2DItemIDRangeRequest As Sapi.request2DItemIDRangeRequest
+        Public request2DItemIDRangeRequest As Sapi_209.request2DItemIDRangeRequest
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Security As Sapi.SecurityHeaderType, ByVal request2DItemIDRangeRequest As Sapi.request2DItemIDRangeRequest)
+        Public Sub New(ByVal Security As Sapi_209.SecurityHeaderType, ByVal request2DItemIDRangeRequest As Sapi_209.request2DItemIDRangeRequest)
             MyBase.New
             Me.Security = Security
             Me.request2DItemIDRangeRequest = request2DItemIDRangeRequest
@@ -5395,13 +5395,13 @@ Namespace Sapi
     Partial Public Class request2DItemIDRangeResponse1
         
         <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://www.royalmailgroup.com/api/ship/V2", Order:=0)>  _
-        Public request2DItemIDRangeResponse As Sapi.request2DItemIDRangeResponse
+        Public request2DItemIDRangeResponse As Sapi_209.request2DItemIDRangeResponse
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal request2DItemIDRangeResponse As Sapi.request2DItemIDRangeResponse)
+        Public Sub New(ByVal request2DItemIDRangeResponse As Sapi_209.request2DItemIDRangeResponse)
             MyBase.New
             Me.request2DItemIDRangeResponse = request2DItemIDRangeResponse
         End Sub
@@ -5409,14 +5409,14 @@ Namespace Sapi
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Public Interface shippingAPIPortTypeChannel
-        Inherits Sapi.shippingAPIPortType, System.ServiceModel.IClientChannel
+        Inherits Sapi_209.shippingAPIPortType, System.ServiceModel.IClientChannel
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Partial Public Class shippingAPIPortTypeClient
-        Inherits System.ServiceModel.ClientBase(Of Sapi.shippingAPIPortType)
-        Implements Sapi.shippingAPIPortType
+        Inherits System.ServiceModel.ClientBase(Of Sapi_209.shippingAPIPortType)
+        Implements Sapi_209.shippingAPIPortType
         
         Public Sub New()
             MyBase.New
@@ -5439,228 +5439,228 @@ Namespace Sapi
         End Sub
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_createShipment(ByVal request As Sapi.createShipmentRequest1) As Sapi.createShipmentResponse1 Implements Sapi.shippingAPIPortType.createShipment
+        Function Sapi_209_shippingAPIPortType_createShipment(ByVal request As Sapi_209.createShipmentRequest1) As Sapi_209.createShipmentResponse1 Implements Sapi_209.shippingAPIPortType.createShipment
             Return MyBase.Channel.createShipment(request)
         End Function
         
-        Public Function createShipment(ByVal Security As Sapi.SecurityHeaderType, ByVal createShipmentRequest As Sapi.createShipmentRequest) As Sapi.createShipmentResponse
-            Dim inValue As Sapi.createShipmentRequest1 = New Sapi.createShipmentRequest1()
+        Public Function createShipment(ByVal Security As Sapi_209.SecurityHeaderType, ByVal createShipmentRequest As Sapi_209.createShipmentRequest) As Sapi_209.createShipmentResponse
+            Dim inValue As Sapi_209.createShipmentRequest1 = New Sapi_209.createShipmentRequest1()
             inValue.Security = Security
             inValue.createShipmentRequest = createShipmentRequest
-            Dim retVal As Sapi.createShipmentResponse1 = CType(Me,Sapi.shippingAPIPortType).createShipment(inValue)
+            Dim retVal As Sapi_209.createShipmentResponse1 = CType(Me,Sapi_209.shippingAPIPortType).createShipment(inValue)
             Return retVal.createShipmentResponse
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_createShipmentAsync(ByVal request As Sapi.createShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi.createShipmentResponse1) Implements Sapi.shippingAPIPortType.createShipmentAsync
+        Function Sapi_209_shippingAPIPortType_createShipmentAsync(ByVal request As Sapi_209.createShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi_209.createShipmentResponse1) Implements Sapi_209.shippingAPIPortType.createShipmentAsync
             Return MyBase.Channel.createShipmentAsync(request)
         End Function
         
-        Public Function createShipmentAsync(ByVal Security As Sapi.SecurityHeaderType, ByVal createShipmentRequest As Sapi.createShipmentRequest) As System.Threading.Tasks.Task(Of Sapi.createShipmentResponse1)
-            Dim inValue As Sapi.createShipmentRequest1 = New Sapi.createShipmentRequest1()
+        Public Function createShipmentAsync(ByVal Security As Sapi_209.SecurityHeaderType, ByVal createShipmentRequest As Sapi_209.createShipmentRequest) As System.Threading.Tasks.Task(Of Sapi_209.createShipmentResponse1)
+            Dim inValue As Sapi_209.createShipmentRequest1 = New Sapi_209.createShipmentRequest1()
             inValue.Security = Security
             inValue.createShipmentRequest = createShipmentRequest
-            Return CType(Me,Sapi.shippingAPIPortType).createShipmentAsync(inValue)
+            Return CType(Me,Sapi_209.shippingAPIPortType).createShipmentAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_printLabel(ByVal request As Sapi.printLabelRequest1) As Sapi.printLabelResponse1 Implements Sapi.shippingAPIPortType.printLabel
+        Function Sapi_209_shippingAPIPortType_printLabel(ByVal request As Sapi_209.printLabelRequest1) As Sapi_209.printLabelResponse1 Implements Sapi_209.shippingAPIPortType.printLabel
             Return MyBase.Channel.printLabel(request)
         End Function
         
-        Public Function printLabel(ByVal Security As Sapi.SecurityHeaderType, ByVal printLabelRequest As Sapi.printLabelRequest) As Sapi.printLabelResponse
-            Dim inValue As Sapi.printLabelRequest1 = New Sapi.printLabelRequest1()
+        Public Function printLabel(ByVal Security As Sapi_209.SecurityHeaderType, ByVal printLabelRequest As Sapi_209.printLabelRequest) As Sapi_209.printLabelResponse
+            Dim inValue As Sapi_209.printLabelRequest1 = New Sapi_209.printLabelRequest1()
             inValue.Security = Security
             inValue.printLabelRequest = printLabelRequest
-            Dim retVal As Sapi.printLabelResponse1 = CType(Me,Sapi.shippingAPIPortType).printLabel(inValue)
+            Dim retVal As Sapi_209.printLabelResponse1 = CType(Me,Sapi_209.shippingAPIPortType).printLabel(inValue)
             Return retVal.printLabelResponse
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_printLabelAsync(ByVal request As Sapi.printLabelRequest1) As System.Threading.Tasks.Task(Of Sapi.printLabelResponse1) Implements Sapi.shippingAPIPortType.printLabelAsync
+        Function Sapi_209_shippingAPIPortType_printLabelAsync(ByVal request As Sapi_209.printLabelRequest1) As System.Threading.Tasks.Task(Of Sapi_209.printLabelResponse1) Implements Sapi_209.shippingAPIPortType.printLabelAsync
             Return MyBase.Channel.printLabelAsync(request)
         End Function
         
-        Public Function printLabelAsync(ByVal Security As Sapi.SecurityHeaderType, ByVal printLabelRequest As Sapi.printLabelRequest) As System.Threading.Tasks.Task(Of Sapi.printLabelResponse1)
-            Dim inValue As Sapi.printLabelRequest1 = New Sapi.printLabelRequest1()
+        Public Function printLabelAsync(ByVal Security As Sapi_209.SecurityHeaderType, ByVal printLabelRequest As Sapi_209.printLabelRequest) As System.Threading.Tasks.Task(Of Sapi_209.printLabelResponse1)
+            Dim inValue As Sapi_209.printLabelRequest1 = New Sapi_209.printLabelRequest1()
             inValue.Security = Security
             inValue.printLabelRequest = printLabelRequest
-            Return CType(Me,Sapi.shippingAPIPortType).printLabelAsync(inValue)
+            Return CType(Me,Sapi_209.shippingAPIPortType).printLabelAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_createManifest(ByVal request As Sapi.createManifestRequest1) As Sapi.createManifestResponse1 Implements Sapi.shippingAPIPortType.createManifest
+        Function Sapi_209_shippingAPIPortType_createManifest(ByVal request As Sapi_209.createManifestRequest1) As Sapi_209.createManifestResponse1 Implements Sapi_209.shippingAPIPortType.createManifest
             Return MyBase.Channel.createManifest(request)
         End Function
         
-        Public Function createManifest(ByVal Security As Sapi.SecurityHeaderType, ByVal createManifestRequest As Sapi.createManifestRequest) As Sapi.createManifestResponse
-            Dim inValue As Sapi.createManifestRequest1 = New Sapi.createManifestRequest1()
+        Public Function createManifest(ByVal Security As Sapi_209.SecurityHeaderType, ByVal createManifestRequest As Sapi_209.createManifestRequest) As Sapi_209.createManifestResponse
+            Dim inValue As Sapi_209.createManifestRequest1 = New Sapi_209.createManifestRequest1()
             inValue.Security = Security
             inValue.createManifestRequest = createManifestRequest
-            Dim retVal As Sapi.createManifestResponse1 = CType(Me,Sapi.shippingAPIPortType).createManifest(inValue)
+            Dim retVal As Sapi_209.createManifestResponse1 = CType(Me,Sapi_209.shippingAPIPortType).createManifest(inValue)
             Return retVal.createManifestResponse
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_createManifestAsync(ByVal request As Sapi.createManifestRequest1) As System.Threading.Tasks.Task(Of Sapi.createManifestResponse1) Implements Sapi.shippingAPIPortType.createManifestAsync
+        Function Sapi_209_shippingAPIPortType_createManifestAsync(ByVal request As Sapi_209.createManifestRequest1) As System.Threading.Tasks.Task(Of Sapi_209.createManifestResponse1) Implements Sapi_209.shippingAPIPortType.createManifestAsync
             Return MyBase.Channel.createManifestAsync(request)
         End Function
         
-        Public Function createManifestAsync(ByVal Security As Sapi.SecurityHeaderType, ByVal createManifestRequest As Sapi.createManifestRequest) As System.Threading.Tasks.Task(Of Sapi.createManifestResponse1)
-            Dim inValue As Sapi.createManifestRequest1 = New Sapi.createManifestRequest1()
+        Public Function createManifestAsync(ByVal Security As Sapi_209.SecurityHeaderType, ByVal createManifestRequest As Sapi_209.createManifestRequest) As System.Threading.Tasks.Task(Of Sapi_209.createManifestResponse1)
+            Dim inValue As Sapi_209.createManifestRequest1 = New Sapi_209.createManifestRequest1()
             inValue.Security = Security
             inValue.createManifestRequest = createManifestRequest
-            Return CType(Me,Sapi.shippingAPIPortType).createManifestAsync(inValue)
+            Return CType(Me,Sapi_209.shippingAPIPortType).createManifestAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_printManifest(ByVal request As Sapi.printManifestRequest1) As Sapi.printManifestResponse1 Implements Sapi.shippingAPIPortType.printManifest
+        Function Sapi_209_shippingAPIPortType_printManifest(ByVal request As Sapi_209.printManifestRequest1) As Sapi_209.printManifestResponse1 Implements Sapi_209.shippingAPIPortType.printManifest
             Return MyBase.Channel.printManifest(request)
         End Function
         
-        Public Function printManifest(ByVal Security As Sapi.SecurityHeaderType, ByVal printManifestRequest As Sapi.printManifestRequest) As Sapi.printManifestResponse
-            Dim inValue As Sapi.printManifestRequest1 = New Sapi.printManifestRequest1()
+        Public Function printManifest(ByVal Security As Sapi_209.SecurityHeaderType, ByVal printManifestRequest As Sapi_209.printManifestRequest) As Sapi_209.printManifestResponse
+            Dim inValue As Sapi_209.printManifestRequest1 = New Sapi_209.printManifestRequest1()
             inValue.Security = Security
             inValue.printManifestRequest = printManifestRequest
-            Dim retVal As Sapi.printManifestResponse1 = CType(Me,Sapi.shippingAPIPortType).printManifest(inValue)
+            Dim retVal As Sapi_209.printManifestResponse1 = CType(Me,Sapi_209.shippingAPIPortType).printManifest(inValue)
             Return retVal.printManifestResponse
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_printManifestAsync(ByVal request As Sapi.printManifestRequest1) As System.Threading.Tasks.Task(Of Sapi.printManifestResponse1) Implements Sapi.shippingAPIPortType.printManifestAsync
+        Function Sapi_209_shippingAPIPortType_printManifestAsync(ByVal request As Sapi_209.printManifestRequest1) As System.Threading.Tasks.Task(Of Sapi_209.printManifestResponse1) Implements Sapi_209.shippingAPIPortType.printManifestAsync
             Return MyBase.Channel.printManifestAsync(request)
         End Function
         
-        Public Function printManifestAsync(ByVal Security As Sapi.SecurityHeaderType, ByVal printManifestRequest As Sapi.printManifestRequest) As System.Threading.Tasks.Task(Of Sapi.printManifestResponse1)
-            Dim inValue As Sapi.printManifestRequest1 = New Sapi.printManifestRequest1()
+        Public Function printManifestAsync(ByVal Security As Sapi_209.SecurityHeaderType, ByVal printManifestRequest As Sapi_209.printManifestRequest) As System.Threading.Tasks.Task(Of Sapi_209.printManifestResponse1)
+            Dim inValue As Sapi_209.printManifestRequest1 = New Sapi_209.printManifestRequest1()
             inValue.Security = Security
             inValue.printManifestRequest = printManifestRequest
-            Return CType(Me,Sapi.shippingAPIPortType).printManifestAsync(inValue)
+            Return CType(Me,Sapi_209.shippingAPIPortType).printManifestAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_updateShipment(ByVal request As Sapi.updateShipmentRequest1) As Sapi.updateShipmentResponse1 Implements Sapi.shippingAPIPortType.updateShipment
+        Function Sapi_209_shippingAPIPortType_updateShipment(ByVal request As Sapi_209.updateShipmentRequest1) As Sapi_209.updateShipmentResponse1 Implements Sapi_209.shippingAPIPortType.updateShipment
             Return MyBase.Channel.updateShipment(request)
         End Function
         
-        Public Function updateShipment(ByVal Security As Sapi.SecurityHeaderType, ByVal updateShipmentRequest As Sapi.updateShipmentRequest) As Sapi.updateShipmentResponse
-            Dim inValue As Sapi.updateShipmentRequest1 = New Sapi.updateShipmentRequest1()
+        Public Function updateShipment(ByVal Security As Sapi_209.SecurityHeaderType, ByVal updateShipmentRequest As Sapi_209.updateShipmentRequest) As Sapi_209.updateShipmentResponse
+            Dim inValue As Sapi_209.updateShipmentRequest1 = New Sapi_209.updateShipmentRequest1()
             inValue.Security = Security
             inValue.updateShipmentRequest = updateShipmentRequest
-            Dim retVal As Sapi.updateShipmentResponse1 = CType(Me,Sapi.shippingAPIPortType).updateShipment(inValue)
+            Dim retVal As Sapi_209.updateShipmentResponse1 = CType(Me,Sapi_209.shippingAPIPortType).updateShipment(inValue)
             Return retVal.updateShipmentResponse
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_updateShipmentAsync(ByVal request As Sapi.updateShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi.updateShipmentResponse1) Implements Sapi.shippingAPIPortType.updateShipmentAsync
+        Function Sapi_209_shippingAPIPortType_updateShipmentAsync(ByVal request As Sapi_209.updateShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi_209.updateShipmentResponse1) Implements Sapi_209.shippingAPIPortType.updateShipmentAsync
             Return MyBase.Channel.updateShipmentAsync(request)
         End Function
         
-        Public Function updateShipmentAsync(ByVal Security As Sapi.SecurityHeaderType, ByVal updateShipmentRequest As Sapi.updateShipmentRequest) As System.Threading.Tasks.Task(Of Sapi.updateShipmentResponse1)
-            Dim inValue As Sapi.updateShipmentRequest1 = New Sapi.updateShipmentRequest1()
+        Public Function updateShipmentAsync(ByVal Security As Sapi_209.SecurityHeaderType, ByVal updateShipmentRequest As Sapi_209.updateShipmentRequest) As System.Threading.Tasks.Task(Of Sapi_209.updateShipmentResponse1)
+            Dim inValue As Sapi_209.updateShipmentRequest1 = New Sapi_209.updateShipmentRequest1()
             inValue.Security = Security
             inValue.updateShipmentRequest = updateShipmentRequest
-            Return CType(Me,Sapi.shippingAPIPortType).updateShipmentAsync(inValue)
+            Return CType(Me,Sapi_209.shippingAPIPortType).updateShipmentAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_cancelShipment(ByVal request As Sapi.cancelShipmentRequest1) As Sapi.cancelShipmentResponse1 Implements Sapi.shippingAPIPortType.cancelShipment
+        Function Sapi_209_shippingAPIPortType_cancelShipment(ByVal request As Sapi_209.cancelShipmentRequest1) As Sapi_209.cancelShipmentResponse1 Implements Sapi_209.shippingAPIPortType.cancelShipment
             Return MyBase.Channel.cancelShipment(request)
         End Function
         
-        Public Function cancelShipment(ByVal Security As Sapi.SecurityHeaderType, ByVal cancelShipmentRequest As Sapi.cancelShipmentRequest) As Sapi.cancelShipmentResponse
-            Dim inValue As Sapi.cancelShipmentRequest1 = New Sapi.cancelShipmentRequest1()
+        Public Function cancelShipment(ByVal Security As Sapi_209.SecurityHeaderType, ByVal cancelShipmentRequest As Sapi_209.cancelShipmentRequest) As Sapi_209.cancelShipmentResponse
+            Dim inValue As Sapi_209.cancelShipmentRequest1 = New Sapi_209.cancelShipmentRequest1()
             inValue.Security = Security
             inValue.cancelShipmentRequest = cancelShipmentRequest
-            Dim retVal As Sapi.cancelShipmentResponse1 = CType(Me,Sapi.shippingAPIPortType).cancelShipment(inValue)
+            Dim retVal As Sapi_209.cancelShipmentResponse1 = CType(Me,Sapi_209.shippingAPIPortType).cancelShipment(inValue)
             Return retVal.cancelShipmentResponse
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_cancelShipmentAsync(ByVal request As Sapi.cancelShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi.cancelShipmentResponse1) Implements Sapi.shippingAPIPortType.cancelShipmentAsync
+        Function Sapi_209_shippingAPIPortType_cancelShipmentAsync(ByVal request As Sapi_209.cancelShipmentRequest1) As System.Threading.Tasks.Task(Of Sapi_209.cancelShipmentResponse1) Implements Sapi_209.shippingAPIPortType.cancelShipmentAsync
             Return MyBase.Channel.cancelShipmentAsync(request)
         End Function
         
-        Public Function cancelShipmentAsync(ByVal Security As Sapi.SecurityHeaderType, ByVal cancelShipmentRequest As Sapi.cancelShipmentRequest) As System.Threading.Tasks.Task(Of Sapi.cancelShipmentResponse1)
-            Dim inValue As Sapi.cancelShipmentRequest1 = New Sapi.cancelShipmentRequest1()
+        Public Function cancelShipmentAsync(ByVal Security As Sapi_209.SecurityHeaderType, ByVal cancelShipmentRequest As Sapi_209.cancelShipmentRequest) As System.Threading.Tasks.Task(Of Sapi_209.cancelShipmentResponse1)
+            Dim inValue As Sapi_209.cancelShipmentRequest1 = New Sapi_209.cancelShipmentRequest1()
             inValue.Security = Security
             inValue.cancelShipmentRequest = cancelShipmentRequest
-            Return CType(Me,Sapi.shippingAPIPortType).cancelShipmentAsync(inValue)
+            Return CType(Me,Sapi_209.shippingAPIPortType).cancelShipmentAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_printDocument(ByVal request As Sapi.printDocumentRequest1) As Sapi.printDocumentResponse1 Implements Sapi.shippingAPIPortType.printDocument
+        Function Sapi_209_shippingAPIPortType_printDocument(ByVal request As Sapi_209.printDocumentRequest1) As Sapi_209.printDocumentResponse1 Implements Sapi_209.shippingAPIPortType.printDocument
             Return MyBase.Channel.printDocument(request)
         End Function
         
-        Public Function printDocument(ByVal Security As Sapi.SecurityHeaderType, ByVal printDocumentRequest As Sapi.printDocumentRequest) As Sapi.printDocumentResponse
-            Dim inValue As Sapi.printDocumentRequest1 = New Sapi.printDocumentRequest1()
+        Public Function printDocument(ByVal Security As Sapi_209.SecurityHeaderType, ByVal printDocumentRequest As Sapi_209.printDocumentRequest) As Sapi_209.printDocumentResponse
+            Dim inValue As Sapi_209.printDocumentRequest1 = New Sapi_209.printDocumentRequest1()
             inValue.Security = Security
             inValue.printDocumentRequest = printDocumentRequest
-            Dim retVal As Sapi.printDocumentResponse1 = CType(Me,Sapi.shippingAPIPortType).printDocument(inValue)
+            Dim retVal As Sapi_209.printDocumentResponse1 = CType(Me,Sapi_209.shippingAPIPortType).printDocument(inValue)
             Return retVal.printDocumentResponse
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_printDocumentAsync(ByVal request As Sapi.printDocumentRequest1) As System.Threading.Tasks.Task(Of Sapi.printDocumentResponse1) Implements Sapi.shippingAPIPortType.printDocumentAsync
+        Function Sapi_209_shippingAPIPortType_printDocumentAsync(ByVal request As Sapi_209.printDocumentRequest1) As System.Threading.Tasks.Task(Of Sapi_209.printDocumentResponse1) Implements Sapi_209.shippingAPIPortType.printDocumentAsync
             Return MyBase.Channel.printDocumentAsync(request)
         End Function
         
-        Public Function printDocumentAsync(ByVal Security As Sapi.SecurityHeaderType, ByVal printDocumentRequest As Sapi.printDocumentRequest) As System.Threading.Tasks.Task(Of Sapi.printDocumentResponse1)
-            Dim inValue As Sapi.printDocumentRequest1 = New Sapi.printDocumentRequest1()
+        Public Function printDocumentAsync(ByVal Security As Sapi_209.SecurityHeaderType, ByVal printDocumentRequest As Sapi_209.printDocumentRequest) As System.Threading.Tasks.Task(Of Sapi_209.printDocumentResponse1)
+            Dim inValue As Sapi_209.printDocumentRequest1 = New Sapi_209.printDocumentRequest1()
             inValue.Security = Security
             inValue.printDocumentRequest = printDocumentRequest
-            Return CType(Me,Sapi.shippingAPIPortType).printDocumentAsync(inValue)
+            Return CType(Me,Sapi_209.shippingAPIPortType).printDocumentAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_request1DRanges(ByVal request As Sapi.request1DRangesRequest1) As Sapi.request1DRangesResponse1 Implements Sapi.shippingAPIPortType.request1DRanges
+        Function Sapi_209_shippingAPIPortType_request1DRanges(ByVal request As Sapi_209.request1DRangesRequest1) As Sapi_209.request1DRangesResponse1 Implements Sapi_209.shippingAPIPortType.request1DRanges
             Return MyBase.Channel.request1DRanges(request)
         End Function
         
-        Public Function request1DRanges(ByVal Security As Sapi.SecurityHeaderType, ByVal request1DRangesRequest As Sapi.request1DRangesRequest) As Sapi.request1DRangesResponse
-            Dim inValue As Sapi.request1DRangesRequest1 = New Sapi.request1DRangesRequest1()
+        Public Function request1DRanges(ByVal Security As Sapi_209.SecurityHeaderType, ByVal request1DRangesRequest As Sapi_209.request1DRangesRequest) As Sapi_209.request1DRangesResponse
+            Dim inValue As Sapi_209.request1DRangesRequest1 = New Sapi_209.request1DRangesRequest1()
             inValue.Security = Security
             inValue.request1DRangesRequest = request1DRangesRequest
-            Dim retVal As Sapi.request1DRangesResponse1 = CType(Me,Sapi.shippingAPIPortType).request1DRanges(inValue)
+            Dim retVal As Sapi_209.request1DRangesResponse1 = CType(Me,Sapi_209.shippingAPIPortType).request1DRanges(inValue)
             Return retVal.request1DRangesResponse
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_request1DRangesAsync(ByVal request As Sapi.request1DRangesRequest1) As System.Threading.Tasks.Task(Of Sapi.request1DRangesResponse1) Implements Sapi.shippingAPIPortType.request1DRangesAsync
+        Function Sapi_209_shippingAPIPortType_request1DRangesAsync(ByVal request As Sapi_209.request1DRangesRequest1) As System.Threading.Tasks.Task(Of Sapi_209.request1DRangesResponse1) Implements Sapi_209.shippingAPIPortType.request1DRangesAsync
             Return MyBase.Channel.request1DRangesAsync(request)
         End Function
         
-        Public Function request1DRangesAsync(ByVal Security As Sapi.SecurityHeaderType, ByVal request1DRangesRequest As Sapi.request1DRangesRequest) As System.Threading.Tasks.Task(Of Sapi.request1DRangesResponse1)
-            Dim inValue As Sapi.request1DRangesRequest1 = New Sapi.request1DRangesRequest1()
+        Public Function request1DRangesAsync(ByVal Security As Sapi_209.SecurityHeaderType, ByVal request1DRangesRequest As Sapi_209.request1DRangesRequest) As System.Threading.Tasks.Task(Of Sapi_209.request1DRangesResponse1)
+            Dim inValue As Sapi_209.request1DRangesRequest1 = New Sapi_209.request1DRangesRequest1()
             inValue.Security = Security
             inValue.request1DRangesRequest = request1DRangesRequest
-            Return CType(Me,Sapi.shippingAPIPortType).request1DRangesAsync(inValue)
+            Return CType(Me,Sapi_209.shippingAPIPortType).request1DRangesAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_request2DItemIDRange(ByVal request As Sapi.request2DItemIDRangeRequest1) As Sapi.request2DItemIDRangeResponse1 Implements Sapi.shippingAPIPortType.request2DItemIDRange
+        Function Sapi_209_shippingAPIPortType_request2DItemIDRange(ByVal request As Sapi_209.request2DItemIDRangeRequest1) As Sapi_209.request2DItemIDRangeResponse1 Implements Sapi_209.shippingAPIPortType.request2DItemIDRange
             Return MyBase.Channel.request2DItemIDRange(request)
         End Function
         
-        Public Function request2DItemIDRange(ByVal Security As Sapi.SecurityHeaderType, ByVal request2DItemIDRangeRequest As Sapi.request2DItemIDRangeRequest) As Sapi.request2DItemIDRangeResponse
-            Dim inValue As Sapi.request2DItemIDRangeRequest1 = New Sapi.request2DItemIDRangeRequest1()
+        Public Function request2DItemIDRange(ByVal Security As Sapi_209.SecurityHeaderType, ByVal request2DItemIDRangeRequest As Sapi_209.request2DItemIDRangeRequest) As Sapi_209.request2DItemIDRangeResponse
+            Dim inValue As Sapi_209.request2DItemIDRangeRequest1 = New Sapi_209.request2DItemIDRangeRequest1()
             inValue.Security = Security
             inValue.request2DItemIDRangeRequest = request2DItemIDRangeRequest
-            Dim retVal As Sapi.request2DItemIDRangeResponse1 = CType(Me,Sapi.shippingAPIPortType).request2DItemIDRange(inValue)
+            Dim retVal As Sapi_209.request2DItemIDRangeResponse1 = CType(Me,Sapi_209.shippingAPIPortType).request2DItemIDRange(inValue)
             Return retVal.request2DItemIDRangeResponse
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function Sapi_shippingAPIPortType_request2DItemIDRangeAsync(ByVal request As Sapi.request2DItemIDRangeRequest1) As System.Threading.Tasks.Task(Of Sapi.request2DItemIDRangeResponse1) Implements Sapi.shippingAPIPortType.request2DItemIDRangeAsync
+        Function Sapi_209_shippingAPIPortType_request2DItemIDRangeAsync(ByVal request As Sapi_209.request2DItemIDRangeRequest1) As System.Threading.Tasks.Task(Of Sapi_209.request2DItemIDRangeResponse1) Implements Sapi_209.shippingAPIPortType.request2DItemIDRangeAsync
             Return MyBase.Channel.request2DItemIDRangeAsync(request)
         End Function
         
-        Public Function request2DItemIDRangeAsync(ByVal Security As Sapi.SecurityHeaderType, ByVal request2DItemIDRangeRequest As Sapi.request2DItemIDRangeRequest) As System.Threading.Tasks.Task(Of Sapi.request2DItemIDRangeResponse1)
-            Dim inValue As Sapi.request2DItemIDRangeRequest1 = New Sapi.request2DItemIDRangeRequest1()
+        Public Function request2DItemIDRangeAsync(ByVal Security As Sapi_209.SecurityHeaderType, ByVal request2DItemIDRangeRequest As Sapi_209.request2DItemIDRangeRequest) As System.Threading.Tasks.Task(Of Sapi_209.request2DItemIDRangeResponse1)
+            Dim inValue As Sapi_209.request2DItemIDRangeRequest1 = New Sapi_209.request2DItemIDRangeRequest1()
             inValue.Security = Security
             inValue.request2DItemIDRangeRequest = request2DItemIDRangeRequest
-            Return CType(Me,Sapi.shippingAPIPortType).request2DItemIDRangeAsync(inValue)
+            Return CType(Me,Sapi_209.shippingAPIPortType).request2DItemIDRangeAsync(inValue)
         End Function
     End Class
 End Namespace

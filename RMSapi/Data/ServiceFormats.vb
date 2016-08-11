@@ -1,6 +1,15 @@
-﻿Namespace SapiData
+﻿'###################################################################################
+'##    ServiceFormats.vb                                    RoyalMailSAPIv2NET    ##
+'##                           © 2016 White Hinge Ltd                              ##
+'##                                                                               ##
+'##   ==== Authored By (Enter your name here if you contributed ===============   ##
+'##       Lee Butler (WHL),  Colin McAloon (WHL)                                  ##
+'##                                                                               ##
+'###################################################################################
+Namespace SapiData
 
     Public Enum ServiceFormats
+        None = 0
         _Inland_Large_Letter = 1
         _Inland_Letter = 2
         _Inland_format_Not_Applicable = 3
@@ -16,7 +25,11 @@
         Inherits Dictionary(Of String, String)
 
         Public Function GetItem(item) As String
-            Return Me(item.ToString)
+            If Not item = 0 Then
+                Return Me(item.ToString)
+            Else
+                Return ""
+            End If
         End Function
 
         Public Sub New()

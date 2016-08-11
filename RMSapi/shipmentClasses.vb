@@ -1,4 +1,12 @@
-﻿Imports RMaPI_v2.SapiData
+﻿'###################################################################################
+'##    ShipmentClasses.vb                                   RoyalMailSAPIv2NET    ##
+'##                           © 2016 White Hinge Ltd                              ##
+'##                                                                               ##
+'##   ==== Authored By (Enter your name here if you contributed) ==============   ##
+'##       Lee Butler (WHL),  Colin McAloon (WHL)                                  ##
+'##                                                                               ##
+'###################################################################################
+Imports RMaPI_v2.SapiData
 Namespace ShipmentClasses
     ''' <summary>
     ''' Contains details which are passed into the CreateShipment function
@@ -8,7 +16,7 @@ Namespace ShipmentClasses
 
         Public Class ShipmentReferences
             ''' <summary>
-            ''' This is the department reference code that customers can define in OBA. This is visible in the system departmental references GUI.
+            ''' This is the department reference code (number) that customers can define in OBA. This is visible in the system departmental references GUI.
             ''' </summary>
             Public Department As String
 
@@ -63,10 +71,10 @@ Namespace ShipmentClasses
         ''' Not entirely sure what this is. Waiting for clarification from Royal Mail.
         ''' </summary>
         Public ServiceOccurence As String
-        Public ServiceType As ServiceTypes
-        Public ServiceOffering As ServiceOfferings
-        Public ServiceFormat As ServiceFormats
-        Public BFPOFormat As BFPOFormats
+        Public ServiceType As ServiceTypes = ServiceTypes.None
+        Public ServiceOffering As ServiceOfferings = ServiceOfferings.None
+        Public ServiceFormat As ServiceFormats = ServiceFormats.None
+        Public BFPOFormat As BFPOFormats = BFPOFormats.None
         Public ServiceEnhancements As New List(Of SapiData.ServiceEnhancements)
         ''' <summary>
         ''' For RM Tracked items only, this element specifies whether a signature is required on delivery. If this element is not included then it defaults to false. 
@@ -84,10 +92,10 @@ Namespace ShipmentClasses
 
         Friend Function ServiceEnhancementsAPICompatible()                                  '
             Dim EnhaDict As New ServiceEnhancementsDict                                     ' "Oops!... I Did It Again" is a song by American singer Britney Spears from her 2000 second studio album 
-            Dim SEs As New List(Of Sapi.serviceEnhancementType)                             ' of the same name. It was released on March 27, 2000, by JIVE Records as the lead single from the album.
+            Dim SEs As New List(Of Sapi_209.serviceEnhancementType)                             ' of the same name. It was released on March 27, 2000, by JIVE Records as the lead single from the album.
             For Each SE As SapiData.ServiceEnhancements In ServiceEnhancements                        ' The song was written and produced by Max Martin and Rami Yacoub. "Oops!... I Did It Again" is a song that
-                Dim NewEnhancement As New Sapi.serviceEnhancementType                       ' lyrically speaks of a female who views love as a game, and she decides to use that to her advantage by 
-                Dim NewEnhancementRefType As New Sapi.referenceDataType                     ' playing with her lover's emotions. Its bridge features a dialogue which references the blockbuster film Titanic 
+                Dim NewEnhancement As New Sapi_209.serviceEnhancementType                       ' lyrically speaks of a female who views love as a game, and she decides to use that to her advantage by 
+                Dim NewEnhancementRefType As New Sapi_209.referenceDataType                     ' playing with her lover's emotions. Its bridge features a dialogue which references the blockbuster film Titanic 
                 NewEnhancementRefType.code = EnhaDict.GetItem(SE)                           ' (1997).
                 NewEnhancement.serviceEnhancementCode = NewEnhancementRefType               ' 
                 SEs.Add(NewEnhancement)                                                     ' It just reminded me of the song. Thanks

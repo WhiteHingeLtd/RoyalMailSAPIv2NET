@@ -1,8 +1,17 @@
-﻿Namespace SapiData
+﻿'###################################################################################
+'##    ServiceOfferings.vb                                  RoyalMailSAPIv2NET    ##
+'##                           © 2016 White Hinge Ltd                              ##
+'##                                                                               ##
+'##   ==== Authored By (Enter your name here if you contributed ===============   ##
+'##       Lee Butler (WHL),  Colin McAloon (WHL)                                  ##
+'##                                                                               ##
+'###################################################################################
+Namespace SapiData
     ''' <summary>
     ''' Automatically generated using the Shipping API Reference Excel sheet.
     ''' </summary>
     Public Enum ServiceOfferings
+        None = 0
         _ROYAL_MAIL_24_48 = 1
         _INTL_BUS_PARCELS_ZERO_SORT_HI_VOL_PRIORITY_I = 3
         _INTL_BUS_PARCELS_ZERO_SORT_HI_VOL_ECONOMY_ = 4
@@ -119,7 +128,11 @@
         Inherits Dictionary(Of String, String)
 
         Public Function GetItem(item) As String
-            Return Me(item.ToString)
+            If Not item = 0 Then
+                Return Me(item.ToString)
+            Else
+                Return ""
+            End If
         End Function
 
         Public Sub New()

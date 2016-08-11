@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9f6bd638-8517-4919-8f1f-5b4f653c439b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="Z:\.V5\Documents\GIT\RoyalMailSAPIv2NET\RMSapi\WSDL Data\ShippingAPI_V2_0_9.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="oasis-200401-wss-wssecurity-utility-1.xsd" MetadataType="Schema" ID="29e592e0-17ef-4c49-8d53-20aad5eab276" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/oasis-200401-wss-wssecurity-utility-1.0.xsd" />
+    <MetadataFile FileName="ReferenceDataV2_3.xsd" MetadataType="Schema" ID="6ff30330-4038-43b9-a2cf-c778097f36ae" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/CDM/ReferenceDataV2_3.xsd" />
+    <MetadataFile FileName="xml.xsd" MetadataType="Schema" ID="95c27e89-0eca-4d2c-a5aa-f04782128adf" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/xml.xsd" />
+    <MetadataFile FileName="ShippingAPI_V2_0_9.xsd" MetadataType="Schema" ID="ee3bfa9c-4c2d-492c-86ec-8c3fa724712b" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/ShippingAPI_V2_0_9.xsd" />
+    <MetadataFile FileName="shippingAPI.wsdl" MetadataType="Wsdl" ID="ab8b639b-291c-49b1-a8fc-5ffbd8a03f00" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/ShippingAPI_V2_0_9.wsdl" />
+    <MetadataFile FileName="RMGSOAPExtensionsV1_2.xsd" MetadataType="Schema" ID="9e72fb22-bcc4-4649-ab86-c3dcd5267cf5" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/CDM/RMGSOAPExtensionsV1_2.xsd" />
+    <MetadataFile FileName="CommonClassesV2_3.xsd" MetadataType="Schema" ID="3e10aef9-e953-4487-a096-481e507ec4c1" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/CDM/CommonClassesV2_3.xsd" />
+    <MetadataFile FileName="oasis-200401-wss-wssecurity-secext-1.xsd" MetadataType="Schema" ID="34973585-3c92-48c2-ac5f-53541ec262c4" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/oasis-200401-wss-wssecurity-secext-1.0.xsd" />
+    <MetadataFile FileName="CommonIntegrationSchemaV1_11_1.xsd" MetadataType="Schema" ID="e2d9b918-25b0-47fc-90f0-ba0678dfb3ce" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/CDM/CommonIntegrationSchemaV1_11_1.xsd" />
+    <MetadataFile FileName="DatatypesV2_3.xsd" MetadataType="Schema" ID="4bee17ae-f902-445e-9551-2d1c711c6cda" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/CDM/DatatypesV2_3.xsd" />
+    <MetadataFile FileName="xmldsig-core-schema.xsd" MetadataType="Schema" ID="8e7c27bc-ade6-49a2-8d6c-b6c36347cc18" SourceId="1" SourceUrl="file:///Z:/.V5/Documents/GIT/RoyalMailSAPIv2NET/RMSapi/WSDL Data/xmldsig-core-schema.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,6 +1,15 @@
-﻿Namespace SapiData
+﻿'###################################################################################
+'##    BFPOFormats.vb                                       RoyalMailSAPIv2NET    ##
+'##                           © 2016 White Hinge Ltd                              ##
+'##                                                                               ##
+'##   ==== Authored By (Enter your name here if you contributed ===============   ##
+'##       Lee Butler (WHL),  Colin McAloon (WHL)                                  ##
+'##                                                                               ##
+'###################################################################################
+Namespace SapiData
 
     Public Enum BFPOFormats
+        None = 0
         _SD_0___100G_GBP500_COMP = 1
         _SD_101___500G_GBP500_COMP = 2
         _SD_501__1KG_GBP500_COMP = 3
@@ -21,7 +30,12 @@
         Inherits Dictionary(Of String, String)
 
         Public Function GetItem(item) As String
-            Return Me(item.ToString)
+            If Not item = 0 Then
+                Return Me(item.ToString)
+            Else
+                Return ""
+            End If
+
         End Function
 
         Public Sub New()

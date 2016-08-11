@@ -1,6 +1,7 @@
 ﻿Namespace SapiData
 
     Public Enum ShipmentTypes
+        None = 0
         _Delivery = 1
         _Return = 2
     End Enum
@@ -9,7 +10,11 @@
         Inherits Dictionary(Of String, String)
 
         Public Function GetItem(item) As String
-            Return Me(item.ToString)
+            If Not item = 0 Then
+                Return Me(item.ToString)
+            Else
+                Return ""
+            End If
         End Function
 
         Public Sub New()

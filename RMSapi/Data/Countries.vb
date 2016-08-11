@@ -1,4 +1,12 @@
-﻿Namespace SapiData
+﻿'###################################################################################
+'##    Countries.vb                                         RoyalMailSAPIv2NET    ##
+'##                           © 2016 White Hinge Ltd                              ##
+'##                                                                               ##
+'##   ==== Authored By (Enter your name here if you contributed ===============   ##
+'##       Lee Butler (WHL),  Colin McAloon (WHL)                                  ##
+'##                                                                               ##
+'###################################################################################
+Namespace SapiData
 
     Public Enum Countries
         _ASCENSION = 1

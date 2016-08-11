@@ -1,19 +1,54 @@
-﻿Imports RMaPI_v2.Sapi
+﻿'###################################################################################
+'##    methods.vb                                           RoyalMailSAPIv2NET    ##
+'##                           © 2016 White Hinge Ltd                              ##
+'##                                                                               ##
+'##   ==== Authored By (Enter your name here if you contributed) ==============   ##
+'##       Lee Butler (WHL),  Colin McAloon (WHL)                                  ##
+'##                                                                               ##
+'###################################################################################
+Imports RMaPI_v2.Sapi_209
 Public Class ShippingAPIMethods
-    Dim Shipping As New RMaPI_v2.Sapi.shippingAPIPortTypeClient()
+
+    Private Function GenerateClient(ClientID As String, ClientSecret As String, Username As String, Sha1Password As String)
+        'WCF is so damn stupid. 
+
+        'Create binding
+        Dim newbinding As New System.ServiceModel.BasicHttpsBinding(ServiceModel.BasicHttpsSecurityMode.Transport)
+        newbinding.Security.Transport.ClientCredentialType = ServiceModel.HttpClientCredentialType.Basic
+        'Create Credentials
+        Dim Creds As PasswordDigest.DigestData = PasswordDigest.GetDigest(Sha1Password, Username)
+        Dim wsse As ServiceModel.Channels.AddressHeader
+
+        'Create Headers
+        Dim clid As ServiceModel.Channels.AddressHeader = ServiceModel.Channels.AddressHeader.CreateAddressHeader("X-IBM-Client-Id", "", ClientID)
+        Dim clsec As ServiceModel.Channels.AddressHeader = ServiceModel.Channels.AddressHeader.CreateAddressHeader("X-IBM-Client-Secret", "", ClientSecret)
+        'Create Endpoint
+        Dim BaseURI As New Uri("https://api.royalmail.net/shipping/v2")
+        Dim ep As New ServiceModel.EndpointAddress(BaseURI, {clid, clsec})
+        'Create and set client
+
+        Shipping = New shippingAPIPortTypeClient(newbinding, ep)
+
+
+    End Function
 
     Dim CustomerAccountNumber As String
+    Dim Shipping As shippingAPIPortTypeClient
 
-    Public Sub AccountDetails(AccountNumber As String)
+    Public Sub New(AccountNumber As String)
+        GenerateClient("97b330f9-acdf-43ed-a083-b612ae5bbb75", "", "bugs@whitehinge.com", "f0fc0c146e023bd778b91db452a00249dd375619")
         CustomerAccountNumber = AccountNumber
     End Sub
+
+
+
 
     ''' <summary>
     ''' Automatically generates a header to send with the request.
     ''' </summary>
     ''' <returns></returns>
-    Public Function GenerateIntegrationHeader() As Sapi.integrationHeader
-        Dim NewHeader As New Sapi.integrationHeader
+    Friend Function GenerateIntegrationHeader() As integrationHeader
+        Dim NewHeader As New integrationHeader
         NewHeader.dateTime = Now
         NewHeader.dateTimeSpecified = True 'What's this?
         NewHeader.version = 2
@@ -22,7 +57,7 @@ Public Class ShippingAPIMethods
         'Apparently the flags aren't used. Huh.
 
         'Create an Identification thing.
-        Dim NH_ID As New Sapi.identificationStructure
+        Dim NH_ID As New identificationStructure
         NH_ID.applicationId = CustomerAccountNumber
         NH_ID.transactionId = Now.Ticks.ToString 'It can be anything, and it's not running async seemingly so why not.
 
@@ -39,9 +74,9 @@ Public Class ShippingAPIMethods
     ''' <param name="ShipData">Contains all of the required data to send the request.</param>
     ''' <returns></returns>
     Public Function CreateShipment(ShipData As ShipmentClasses.CreateShipmentDetails) As createShipmentResponse
-        Dim SecurityType As New Sapi.SecurityHeaderType
+        Dim SecurityType As New SecurityHeaderType
 
-        Dim CSRRequest As New Sapi.requestedShipment
+        Dim CSRRequest As New requestedShipment
 
         'Shipment Type & ShipmentType/Code
         Dim ShipType As New referenceDataType   '
@@ -95,8 +130,15 @@ Public Class ShippingAPIMethods
         Dim RecipientContact As New contact
         RecipientContact.name = ShipData.Recipient.Name
         RecipientContact.complementaryName = ShipData.Recipient.BusinessName
-        RecipientContact.telephoneNumber.telephoneNumber1 = ShipData.Recipient.Telephone
-        RecipientContact.electronicAddress.electronicAddress = ShipData.Recipient.Email
+        'We have to create a telephone numnber what the fuck
+        Dim tele As New telephoneNumber
+        tele.telephoneNumber1 = ShipData.Recipient.Telephone
+        RecipientContact.telephoneNumber = tele
+        'And an email address. Why can't it be easy?
+        Dim email As New digitalAddress
+        email.electronicAddress = ShipData.Recipient.Email
+        RecipientContact.electronicAddress = email
+        'Back to "normal"
         CSRRequest.recipientContact = RecipientContact
 
         Dim RecipientAddress As New address
@@ -123,7 +165,7 @@ Public Class ShippingAPIMethods
         CSRRequest.senderReference = ShipData.References.Sender
 
 
-        Dim CSR As New Sapi.createShipmentRequest
+        Dim CSR As New createShipmentRequest
         CSR.integrationHeader = GenerateIntegrationHeader()
         CSR.requestedShipment = CSRRequest
 
