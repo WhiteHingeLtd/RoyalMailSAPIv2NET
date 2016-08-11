@@ -81,7 +81,7 @@
     <Compile Include="Data\BFPOFormats.vb" />
     <Compile Include="Data\Countries.vb" />
     <Compile Include="Data\ServiceEnhancements.vb" />
-    <Compile Include="Data\ServiceFormat.vb" />
+    <Compile Include="Data\ServiceFormats.vb" />
     <Compile Include="Data\ServiceOfferings.vb" />
     <Compile Include="Data\ServiceTypes.vb" />
     <Compile Include="Data\ShipmentTypes.vb" />

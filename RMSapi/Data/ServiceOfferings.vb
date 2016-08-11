@@ -115,7 +115,7 @@
     End Enum
 
     'Not an enum, but ti's going here anyway.
-    Friend Class ShippingServicesDict
+    Friend Class ServiceOfferingsDict
         Inherits Dictionary(Of String, String)
 
         Public Function GetItem(item) As String
