@@ -7,36 +7,107 @@
 '##                                                                               ##
 '###################################################################################
 Imports RMaPI_v2.Sapi_209
+Imports System.ServiceModel
+Imports System.ServiceModel.Channels
 Public Class ShippingAPIMethods
 
+    Private Function CreateBinding() As CustomBinding
+
+        'Thank fuck for this https://weblog.west-wind.com/posts/2012/Nov/24/WCF-WSSecurity-and-WSE-Nonce-Authentication
+        Dim cb As New CustomBinding
+
+        Dim sec As TransportSecurityBindingElement = TransportSecurityBindingElement.CreateUserNameOverTransportBindingElement()
+        sec.IncludeTimestamp = False
+        sec.DefaultAlgorithmSuite = Security.SecurityAlgorithmSuite.Basic256
+        sec.MessageSecurityVersion = MessageSecurityVersion.WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10
+        sec.IncludeTimestamp = False
+        sec.SetKeyDerivation(False)
+
+
+        Dim Enc As New System.ServiceModel.Channels.TextMessageEncodingBindingElement
+        Enc.MessageVersion = MessageVersion.Soap11
+        Enc.WriteEncoding = System.Text.Encoding.UTF8
+
+
+        Dim tra As New HttpsTransportBindingElement
+        tra.MaxReceivedMessageSize = 20000000
+
+
+
+        cb.Elements.Add(sec)
+        cb.Elements.Add(Enc)
+        cb.Elements.Add(tra)
+
+
+
+        Return cb
+    End Function
+
+    ''' <summary>
+    ''' Generates a SINGLE USE shippingApi client.
+    ''' </summary>
+    ''' <param name="ClientID">Application Client ID</param>
+    ''' <param name="ClientSecret">Application Client Secret</param>
+    ''' <param name="Username">API Username (Visible on DMO)</param>
+    ''' <param name="Sha1Password">API Password, hashed with SHA-1</param>
+    ''' <returns>A shippingAPI client ready for use.</returns>
     Private Function GenerateClient(ClientID As String, ClientSecret As String, Username As String, Sha1Password As String)
-        'WCF is so damn stupid. 
+        '===================== ENDPIINT ===============
+        ''Create Headers
 
-        'Create binding
-        Dim newbinding As New System.ServiceModel.BasicHttpsBinding(ServiceModel.BasicHttpsSecurityMode.Transport)
-        newbinding.Security.Transport.ClientCredentialType = ServiceModel.HttpClientCredentialType.Basic
-        'Create Credentials
-        Dim Creds As PasswordDigest.DigestData = PasswordDigest.GetDigest(Sha1Password, Username)
-        Dim wsse As ServiceModel.Channels.AddressHeader
-
-        'Create Headers
-        Dim clid As ServiceModel.Channels.AddressHeader = ServiceModel.Channels.AddressHeader.CreateAddressHeader("X-IBM-Client-Id", "", ClientID)
-        Dim clsec As ServiceModel.Channels.AddressHeader = ServiceModel.Channels.AddressHeader.CreateAddressHeader("X-IBM-Client-Secret", "", ClientSecret)
-        'Create Endpoint
+        'Dim clid As ServiceModel.Channels.AddressHeader = ServiceModel.Channels.AddressHeader.CreateAddressHeader("X-IBM-Client-Id", "", ClientID)
+        'Dim clsec As ServiceModel.Channels.AddressHeader = ServiceModel.Channels.AddressHeader.CreateAddressHeader("X-IBM-Client-Secret", "", ClientSecret)
+        ''Create Endpoint
         Dim BaseURI As New Uri("https://api.royalmail.net/shipping/v2")
-        Dim ep As New ServiceModel.EndpointAddress(BaseURI, {clid, clsec})
-        'Create and set client
-
-        Shipping = New shippingAPIPortTypeClient(newbinding, ep)
+        Dim wsEndpoint As New ServiceModel.EndpointAddress(BaseURI)
 
 
+
+        '============ END OF ENDPOINT ====================
+        '=================BINDING========================
+        Dim wsbinding As Channels.CustomBinding = CreateBinding()
+
+
+        'Shipping = New shippingAPIPortTypeClient(newbinding, ep)
+        Dim service As New shippingAPIPortTypeClient(wsbinding, wsEndpoint)
+        
+        'Fix creds
+        Dim Creds As PasswordDigest.DigestData = PasswordDigest.GetDigest(Sha1Password, Username)
+        service.ChannelFactory.Endpoint.Behaviors.Remove((New System.ServiceModel.Description.ClientCredentials).GetType)
+        service.ChannelFactory.Endpoint.Behaviors.Add(New CustomCredentials(Creds))
+
+        service.ClientCredentials.UserName.UserName = Creds.Username
+        service.ClientCredentials.UserName.Password = Creds.Password
+
+
+
+        'Add Headers Properly#
+        Dim IBMHeaders As New Dictionary(Of String, String)
+        IBMHeaders.Add("X-IBM-Client-Id", ClientID)
+        IBMHeaders.Add("X-IBM-Client-Secret", ClientSecret)
+
+        '"fix" the content type
+        IBMHeaders.Add("Content-Type", "application/xml; charset=utf-8")
+
+        Dim IBMHTTPHEADERS As New HttpHeadersEndpointBehavior(IBMHeaders)
+        service.Endpoint.EndpointBehaviors.Add(IBMHTTPHEADERS)
+
+        Shipping = service
     End Function
 
     Dim CustomerAccountNumber As String
     Dim Shipping As shippingAPIPortTypeClient
 
-    Public Sub New(AccountNumber As String)
-        GenerateClient("97b330f9-acdf-43ed-a083-b612ae5bbb75", "", "bugs@whitehinge.com", "f0fc0c146e023bd778b91db452a00249dd375619")
+    ''' <summary>
+    ''' Creates a class with the details needed to use the Shipping API.
+    ''' </summary>
+    ''' <param name="AccountNumber">Your Customer Account Number</param>
+    ''' <param name="APIUser">You DMO API username</param>
+    ''' <param name="APIPassword">Your DMO API User's password</param>
+    ''' <param name="ClientId">Your Application Client ID</param>
+    ''' <param name="ClientSecret">Your application client secret</param>
+    Public Sub New(AccountNumber As String, APIUser As String, APIPassword As String, ClientId As String, ClientSecret As String)
+        GenerateClient(ClientId, ClientSecret, APIUser, APIPassword)
         CustomerAccountNumber = AccountNumber
     End Sub
 
@@ -75,6 +146,7 @@ Public Class ShippingAPIMethods
     ''' <returns></returns>
     Public Function CreateShipment(ShipData As ShipmentClasses.CreateShipmentDetails) As createShipmentResponse
         Dim SecurityType As New SecurityHeaderType
+
 
         Dim CSRRequest As New requestedShipment
 
@@ -170,6 +242,7 @@ Public Class ShippingAPIMethods
         CSR.requestedShipment = CSRRequest
 
         Return Shipping.createShipment(SecurityType, CSR)
+
 
 
     End Function

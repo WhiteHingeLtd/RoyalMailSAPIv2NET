@@ -15,8 +15,8 @@
 '//                                                                                */
 '//                                                                                */
 '//                                                                                */
-'//       Author:    RMG                                                           */
-'// Version:    1.0                                                           */
+'//       Author:    RMG, Lee Butler(Whl)                                          */
+'//       Version:    1.0                                                          */
 '//       Date:      08/10/2014                                                    */
 '//                                                                                */
 '//                                                                                */

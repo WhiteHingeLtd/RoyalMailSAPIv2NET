@@ -5400,11 +5400,12 @@ Namespace Sapi_209
         Public Sub New()
             MyBase.New
         End Sub
-        
+
         Public Sub New(ByVal request2DItemIDRangeResponse As Sapi_209.request2DItemIDRangeResponse)
             MyBase.New
             Me.request2DItemIDRangeResponse = request2DItemIDRangeResponse
         End Sub
+
     End Class
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
