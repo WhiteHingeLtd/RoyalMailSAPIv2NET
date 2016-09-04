@@ -92,6 +92,7 @@
     <Compile Include="Utils\MessageInspector.vb" />
     <Compile Include="Utils\PassDigestion.vb" />
     <Compile Include="Utils\StupidSecurityHeader.vb" />
+    <Compile Include="Utils\XMLNS REmover.vb" />
     <None Include="Data\BaseCode.vb" />
     <Compile Include="Data\BFPOFormats.vb" />
     <Compile Include="Data\Countries.vb" />

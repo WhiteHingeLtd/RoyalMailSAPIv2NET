@@ -9,6 +9,8 @@
 Imports RMaPI_v2.Sapi_209
 Imports System.ServiceModel
 Imports System.ServiceModel.Channels
+Imports System.ServiceModel.Description
+
 Public Class ShippingAPIMethods
 
     Private Function CreateBinding() As CustomBinding
@@ -19,7 +21,7 @@ Public Class ShippingAPIMethods
         Dim sec As TransportSecurityBindingElement = TransportSecurityBindingElement.CreateUserNameOverTransportBindingElement()
         sec.IncludeTimestamp = False
         sec.DefaultAlgorithmSuite = Security.SecurityAlgorithmSuite.Basic256
-        sec.MessageSecurityVersion = MessageSecurityVersion.WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10
+        sec.MessageSecurityVersion = MessageSecurityVersion.Default
         sec.IncludeTimestamp = False
         sec.SetKeyDerivation(False)
 
@@ -67,19 +69,22 @@ Public Class ShippingAPIMethods
         '=================BINDING========================
         Dim wsbinding As Channels.CustomBinding = CreateBinding()
 
-
         'Shipping = New shippingAPIPortTypeClient(newbinding, ep)
         Dim service As New shippingAPIPortTypeClient(wsbinding, wsEndpoint)
-        
+
         'Fix creds
         Dim Creds As PasswordDigest.DigestData = PasswordDigest.GetDigest(Sha1Password, Username)
         service.ChannelFactory.Endpoint.Behaviors.Remove((New System.ServiceModel.Description.ClientCredentials).GetType)
+
         service.ChannelFactory.Endpoint.Behaviors.Add(New CustomCredentials(Creds))
 
         service.ClientCredentials.UserName.UserName = Creds.Username
         service.ClientCredentials.UserName.Password = Creds.Password
 
-
+        'Now fix the XMLNS with the stupid classes we created in XMLNS Remover
+        For Each od As OperationDescription In service.Endpoint.Contract.Operations
+            od.OperationBehaviors.Add(New RMEndpointBehaviour(Creds))
+        Next
 
         'Add Headers Properly#
         Dim IBMHeaders As New Dictionary(Of String, String)

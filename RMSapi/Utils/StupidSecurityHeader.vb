@@ -52,7 +52,7 @@ Public Class CustomSecurityTokenManager
     End Sub
 
     Public Overrides Function CreateSecurityTokenSerializer(version As System.IdentityModel.Selectors.SecurityTokenVersion) As System.IdentityModel.Selectors.SecurityTokenSerializer
-        Return New CustomTokenSerializer(System.ServiceModel.Security.SecurityVersion.WSSecurity11, _dg)
+        Return New CustomTokenSerializer(System.ServiceModel.Security.SecurityVersion.WSSecurity10, _dg)
     End Function
 End Class
 
@@ -71,10 +71,14 @@ Public Class CustomTokenSerializer
 
     'End Sub
 
+
     Protected Overrides Sub WriteTokenCore(writer As System.Xml.XmlWriter, token As System.IdentityModel.Tokens.SecurityToken)
+        writer.WriteAttributeString("xmlns", "wsse", Nothing, "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")
+        writer.WriteAttributeString("xmlns", "wsu", Nothing, "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd")
 
         'Here's a header that is formatted right,
-        Dim header As String = "<wsse:UsernameToken><wsse:Username>" + _dg.Username + "</wsse:Username><wsse:Password Type=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest"">" + _dg.Password + "</wsse:Password><wsse:Nonce EncodingType=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"">" + _dg.EncodedNonce + "</wsse:Nonce><wsu:Created>" + _dg.Created + "</wsu:Created></wsse:UsernameToken>"
+        Dim wsseNS As String = "wsse"
+        Dim header As String = "<" + wsseNS + ":UsernameToken><" + wsseNS + ":Username>" + _dg.Username + "</" + wsseNS + ":Username><" + wsseNS + ":Password Type=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest"">" + _dg.Password + "</" + wsseNS + ":Password><" + wsseNS + ":Nonce EncodingType=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"">" + _dg.EncodedNonce + "</" + wsseNS + ":Nonce><wsu:Created>" + _dg.Created + "</wsu:Created></" + wsseNS + ":UsernameToken>"
 
         writer.WriteRaw(header)
 
