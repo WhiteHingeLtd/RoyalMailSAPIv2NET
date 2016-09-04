@@ -77,7 +77,7 @@ Public Class CustomTokenSerializer
         writer.WriteAttributeString("xmlns", "wsu", Nothing, "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd")
 
         'Here's a header that is formatted right,
-        Dim wsseNS As String = "wsse"
+        Dim wsseNS As String = "o"
         Dim header As String = "<" + wsseNS + ":UsernameToken><" + wsseNS + ":Username>" + _dg.Username + "</" + wsseNS + ":Username><" + wsseNS + ":Password Type=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest"">" + _dg.Password + "</" + wsseNS + ":Password><" + wsseNS + ":Nonce EncodingType=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"">" + _dg.EncodedNonce + "</" + wsseNS + ":Nonce><wsu:Created>" + _dg.Created + "</wsu:Created></" + wsseNS + ":UsernameToken>"
 
         writer.WriteRaw(header)
