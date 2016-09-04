@@ -21,7 +21,7 @@ Public Class ShippingAPIMethods
         Dim sec As TransportSecurityBindingElement = TransportSecurityBindingElement.CreateUserNameOverTransportBindingElement()
         sec.IncludeTimestamp = False
         sec.DefaultAlgorithmSuite = Security.SecurityAlgorithmSuite.Basic256
-        sec.MessageSecurityVersion = MessageSecurityVersion.Default
+        sec.MessageSecurityVersion = MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10
         sec.IncludeTimestamp = False
         sec.SetKeyDerivation(False)
 

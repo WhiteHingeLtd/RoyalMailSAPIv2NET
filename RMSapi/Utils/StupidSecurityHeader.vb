@@ -52,7 +52,7 @@ Public Class CustomSecurityTokenManager
     End Sub
 
     Public Overrides Function CreateSecurityTokenSerializer(version As System.IdentityModel.Selectors.SecurityTokenVersion) As System.IdentityModel.Selectors.SecurityTokenSerializer
-        Return New CustomTokenSerializer(System.ServiceModel.Security.SecurityVersion.WSSecurity10, _dg)
+        Return New CustomTokenSerializer(System.ServiceModel.Security.SecurityVersion.WSSecurity11, _dg)
     End Function
 End Class
 
