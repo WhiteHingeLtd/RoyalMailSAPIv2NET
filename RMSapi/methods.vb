@@ -51,9 +51,9 @@ Public Class ShippingAPIMethods
     ''' <param name="ClientID">Application Client ID</param>
     ''' <param name="ClientSecret">Application Client Secret</param>
     ''' <param name="Username">API Username (Visible on DMO)</param>
-    ''' <param name="Sha1Password">API Password, hashed with SHA-1</param>
+    ''' <param name="Sha1Password">API Password, NOT HASHED</param>
     ''' <returns>A shippingAPI client ready for use.</returns>
-    Private Function GenerateClient(ClientID As String, ClientSecret As String, Username As String, Sha1Password As String)
+    Private Function GenerateClient(ClientID As String, ClientSecret As String, Username As String, Password As String)
         '===================== ENDPIINT ===============
         ''Create Headers
 
@@ -73,7 +73,7 @@ Public Class ShippingAPIMethods
         Dim service As New shippingAPIPortTypeClient(wsbinding, wsEndpoint)
 
         'Fix creds
-        Dim Creds As PasswordDigest.DigestData = PasswordDigest.GetDigest(Sha1Password, Username)
+        Dim Creds As PasswordDigest.DigestData = PasswordDigest.GetDigest(Password, Username)
         service.ChannelFactory.Endpoint.Behaviors.Remove((New System.ServiceModel.Description.ClientCredentials).GetType)
 
         service.ChannelFactory.Endpoint.Behaviors.Add(New CustomCredentials(Creds))
@@ -134,7 +134,7 @@ Public Class ShippingAPIMethods
 
         'Create an Identification thing.
         Dim NH_ID As New identificationStructure
-        NH_ID.applicationId = CustomerAccountNumber
+        NH_ID.applicationId = "RMG-API-G-01"
         NH_ID.transactionId = Now.Ticks.ToString 'It can be anything, and it's not running async seemingly so why not.
 
         NewHeader.identification = NH_ID

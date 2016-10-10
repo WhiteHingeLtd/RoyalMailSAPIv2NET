@@ -48,13 +48,20 @@ Namespace PasswordDigest
 
 
         Public Function GetSHA1(input) As Byte()
-            Return SHA1Managed.Create().ComputeHash(Encoding.Default.GetBytes(input))
+            Dim Barry() As Byte = SHA1Managed.Create().ComputeHash(Encoding.Default.GetBytes(input))
+            'Dim returner As String = ""
+            'For Each item As Byte In Barry
+            '    returner += item.ToString("X")
+            'Next
+            Return Barry
         End Function
 
-        Public Function GetDigest(Sha1Pass As String, Username As String) As DigestData
+        Public Function GetDigest(Password As String, Username As String) As DigestData
             '// The value below should be changed to your password.  If you store the password  */
             '// as hashed in your database, you will need to change the code below to remove hashing */
             'Private Const String PASSWORD_STRING = @"DummyPassword*";
+            Dim Sha1Pass As String = Convert.ToBase64String(GetSHA1(Password))
+
             Dim response As New DigestData
             response.Username = Username
             response.Created = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")
@@ -63,7 +70,6 @@ Namespace PasswordDigest
             Dim digestInput As String = String.Concat(response.Nonce, response.Created, Sha1Pass)
 
             Dim TempDigest As Byte() = GetSHA1(digestInput)
-
             response.Password = Convert.ToBase64String(TempDigest)
             response.EncodedNonce = Convert.ToBase64String(Encoding.Default.GetBytes(response.Nonce))
 
